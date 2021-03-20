@@ -32,7 +32,7 @@ class WebcamController extends Controller
                 $jsonCountries = $oWebcam->getCountries();
                 $countries = $jsonCountries->result->countries;
                 usort($countries, function($a, $b) {
-                    return $a->name > $b->name;
+                    return $a->name > $b->name ? 1 : -1;
                 });
                 return $countries;
             });
@@ -74,7 +74,7 @@ class WebcamController extends Controller
                 $jsonCountries = $oWebcam->getCountries();
                 $countries = $jsonCountries->result->countries;
                 usort($countries, function($a, $b) {
-                    return $a->name > $b->name;
+                    return $a->name > $b->name ? 1 : -1;
                 });
                 return $countries;
             });
@@ -90,7 +90,7 @@ class WebcamController extends Controller
                 $jsonCountries = $oWebcam->getCategories();
                 $categories = $jsonCountries->result->categories;
                 usort($categories, function($a, $b) {
-                    return $a->name > $b->name;
+                    return $a->name > $b->name ? 1 : -1;
                 });
                 return $categories;
             });
